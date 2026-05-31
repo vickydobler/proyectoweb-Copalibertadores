@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin categorías</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1 class="logo">PuntoCopa</h1>
+        <h2 class="subtitulo">Administrar categorías</h2>
+    </div>
+
+    <div class="nav">
+        <a href="index.php?action=home">Inicio</a>
+        <a href="index.php?action=agregar-categoria">Agregar categoría</a>
+        <a href="index.php?action=logout">Logout</a>
+    </div>
+
+    <div class="fixture">
+        <?php foreach ($categories as $category): ?>
+            <div class="partido">
+                <div class="team">
+                    <span><?= htmlspecialchars($category->pais) ?></span>
+                </div>
+
+                <div>
+                    <a href="index.php?action=editar-categoria&pais=<?= urlencode($category->pais) ?>">Editar</a>
+                    |
+                    <a href="index.php?action=eliminar-categoria&pais=<?= urlencode($category->pais) ?>">Eliminar</a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+</div>
+
+</body>
+</html>

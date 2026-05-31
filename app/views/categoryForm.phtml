@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Categoría</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1 class="logo">PuntoCopa</h1>
+
+        <?php if ($category): ?>
+            <h2 class="subtitulo">Editar categoría</h2>
+        <?php else: ?>
+            <h2 class="subtitulo">Agregar categoría</h2>
+        <?php endif; ?>
+    </div>
+
+    <form method="POST" class="fixture">
+        <label>Nombre de la categoría / país</label>
+
+        <input 
+            type="text" 
+            name="pais" 
+            value="<?= $category ? htmlspecialchars($category) : '' ?>"
+            required
+        >
+
+        <button type="submit">Guardar</button>
+    </form>
+
+</div>
+
+</body>
+</html>
