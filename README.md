@@ -1,7 +1,6 @@
 # TPE Web 2 - Parte 1 
 
-## Integrantes:
-  *Agustin Giano agustingiano@gmail.com
+
   *Victoria Dobler Colo doblervictoria3@gmail.com
 
 ## Tematica TPE
