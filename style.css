@@ -159,6 +159,7 @@ body::before {
   filter: drop-shadow(0 0 6px rgba(0,255,174,0.6));
 }
 
+
 /* NOMBRE */
 .equipo {
   display: block;
@@ -215,6 +216,61 @@ body::before {
   border: 1px solid #30363d;
   padding: 10px;
   border-radius: 10px;
+}
+
+.goleadores {
+  margin-top: 18px;
+  background: #111117;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.goleadores h3 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.35);
+  margin: 0;
+}
+
+.goleador {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 36px;
+  padding: 0 10px;
+  color: #ffffff;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.goleador:nth-child(odd) {
+  background: rgba(255,255,255,0.08);
+}
+
+.goleador-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.goleador-info img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.goleador span {
+  width: 42px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid rgba(255,255,255,0.35);
+  font-weight: bold;
 }
 
 /* HEADER FIXTURE */
@@ -475,4 +531,334 @@ button:hover {
 
 a {
   color: #00ffae;
+}
+
+.team-form {
+  width: 100%;
+  max-width: 520px;
+  margin: 25px auto;
+}
+
+.team-form label {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.equipos-nav {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.equipos-container {
+  width: 98%;
+  max-width: 1290px;
+  background: #062f20;
+  border-radius: 8px;
+  padding: 25px 35px;
+  margin-top: 12px;
+}
+
+.equipos-container .header {
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+.equipos-container .logo {
+  font-size: 26px;
+}
+
+.equipos-container .subtitulo {
+  color: #ffffff;
+  font-size: 21px;
+}
+
+.equipos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.equipo-card {
+  height: 108px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-right: 1px solid rgba(255,255,255,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.equipo-card:nth-child(4n) {
+  border-right: none;
+}
+
+.equipo-card:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.escudo-box {
+  position: relative;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.escudo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.bandera {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  left: -12px;
+  top: 0;
+  border-radius: 50%;
+}
+
+.copas-equipo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+.equipo-card h3 {
+  font-size: 21px;
+  margin-top: 6px;
+  color: #ffffff;
+}
+.equipos-box {
+  width: 98%;
+  max-width: 1290px;
+  margin: 12px auto;
+  padding: 22px 35px;
+  background: #06331f;
+  border-radius: 8px;
+}
+
+.titulo-equipos {
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.subtitulo-equipos {
+  text-align: center;
+  font-size: 21px;
+  color: #ffd700;
+  margin-bottom: 25px;
+}
+
+.equipos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.equipo-item {
+  height: 108px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.equipo-item:nth-child(4n) {
+  border-right: none;
+}
+
+.equipo-item:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.imagenes-equipo {
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 6px;
+}
+
+.bandera-equipo {
+  position: absolute;
+  left: -18px;
+  top: 0;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.escudo-equipo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+.escudo-fallback {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #0b4a31;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.copas-equipo {
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+}
+
+.equipo-item p {
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 6px;
+  color: white;
+}
+.imagenes-equipo {
+  width: 90px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 6px;
+}
+
+.escudo-equipo,
+.equipo-item img {
+  width: 46px !important;
+  height: 46px !important;
+  max-width: 46px !important;
+  max-height: 46px !important;
+  object-fit: contain;
+  display: block;
+}
+
+.bandera-equipo {
+  position: absolute;
+  left: -18px;
+  top: 0;
+  font-size: 20px;
+  line-height: 20px;
+}
+/* ARREGLO FINAL EQUIPOS */
+.equipos-box .equipos-grid img,
+.equipos-container .equipos-grid img,
+.equipo-item img,
+.equipo-card img,
+.escudo-equipo,
+.escudo {
+  width: 45px !important;
+  height: 45px !important;
+  max-width: 45px !important;
+  max-height: 45px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.equipos-box .imagenes-equipo,
+.equipos-container .escudo-box,
+.imagenes-equipo,
+.escudo-box {
+  width: 90px !important;
+  height: 52px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+.bandera-equipo,
+.bandera {
+  width: auto !important;
+  height: auto !important;
+  font-size: 20px !important;
+  position: absolute !important;
+  left: -18px !important;
+  top: 0 !important;
+}
+
+.equipo-item,
+.equipo-card {
+  height: 108px !important;
+  overflow: hidden !important;
+}
+/* logos equipos prolijos */
+.escudo-equipo,
+.equipo-item img {
+  width: 55px !important;
+  height: 55px !important;
+  max-width: 55px !important;
+  max-height: 55px !important;
+  object-fit: contain !important;
+  display: block !important;
+
+  mix-blend-mode: normal !important;
+  filter: none !important;
+  box-shadow: none !important;
+
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.imagenes-equipo {
+  width: 95px !important;
+  height: 60px !important;
+  background: transparent !important;
+}
+
+.equipo-item {
+  height: 130px !important;
+  overflow: hidden !important;
+}
+.team-form {
+  width: 100%;
+  max-width: 520px;
+  margin: 25px auto;
+}
+
+.team-form label {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.equipos-nav {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.escudo-equipo,
+.equipo-item img {
+  width: 55px !important;
+  height: 55px !important;
+  max-width: 55px !important;
+  max-height: 55px !important;
+  object-fit: contain !important;
+  display: block !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.imagenes-equipo {
+  width: 95px !important;
+  height: 60px !important;
+  background: transparent !important;
 }

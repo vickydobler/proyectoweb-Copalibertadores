@@ -23,6 +23,15 @@ function getCategories() {
     return $query->fetchAll(PDO::FETCH_OBJ);
 }
 
+function getTeams() {
+    $db = getConnection();
+
+    $query = $db->prepare("SELECT * FROM equipo ORDER BY nombre ASC");
+    $query->execute();
+
+    return $query->fetchAll(PDO::FETCH_OBJ);
+}
+
 function getTeamsByCountry($pais) {
     $db = getConnection();
 
@@ -30,6 +39,26 @@ function getTeamsByCountry($pais) {
     $query->execute([$pais]);
 
     return $query->fetchAll(PDO::FETCH_OBJ);
+}
+
+function addTeam($nombre, $pais, $estadio, $anio_fundacion, $copas_libertadores, $director_tecnico, $apodo_club) {
+    $db = getConnection();
+
+    $query = $db->prepare("
+        INSERT INTO equipo
+        (nombre, pais, estadio, anio_fundacion, copas_libertadores, director_tecnico, apodo_club)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    ");
+
+    $query->execute([
+        $nombre,
+        $pais,
+        $estadio,
+        $anio_fundacion,
+        $copas_libertadores,
+        $director_tecnico,
+        $apodo_club
+    ]);
 }
 
 function addCountryToTeams($pais) {

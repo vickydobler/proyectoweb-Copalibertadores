@@ -6,12 +6,17 @@ $action = $_GET['action'] ?? 'home';
 
 switch ($action) {
 
+    case '':
     case 'home':
         showHome();
         break;
 
     case 'categorias':
         showCategories();
+        break;
+
+    case 'agregar-equipo':
+        showAddTeam();
         break;
 
     case 'categoria':
@@ -32,6 +37,12 @@ switch ($action) {
 
     case 'eliminar-categoria':
         deleteCategory();
+        break;
+
+    case 'logout':
+        session_start();
+        session_destroy();
+        header('Location: index.php?action=home');
         break;
 
     default:

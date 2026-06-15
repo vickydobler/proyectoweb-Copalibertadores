@@ -7,9 +7,31 @@ function showHome() {
 }
 
 function showCategories() {
-    $categories = getCategories();
+    $teams = getTeams();
 
     require __DIR__ . '/../views/categories.phtml';
+}
+
+function showAddTeam() {
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $nombre = $_POST['nombre'] ?? '';
+        $pais = $_POST['pais'] ?? '';
+        $estadio = $_POST['estadio'] ?? '';
+        $anio_fundacion = $_POST['anio_fundacion'] ?? 0;
+        $copas_libertadores = $_POST['copas_libertadores'] ?? 0;
+        $director_tecnico = $_POST['director_tecnico'] ?? '';
+        $apodo_club = $_POST['apodo_club'] ?? null;
+
+        if (!empty($nombre) && !empty($pais) && !empty($estadio) && !empty($director_tecnico)) {
+            addTeam($nombre, $pais, $estadio, $anio_fundacion, $copas_libertadores, $director_tecnico, $apodo_club);
+        }
+
+        header('Location: index.php?action=categorias');
+        exit;
+    }
+
+    require __DIR__ . '/../views/teamForm.phtml';
 }
 
 function showTeamsByCategory() {
@@ -34,7 +56,6 @@ function showAdminCategories() {
 function addCategory() {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
         $pais = $_POST['pais'];
 
         if (!empty($pais)) {
@@ -51,7 +72,6 @@ function addCategory() {
 }
 
 function editCategory() {
-
     $pais = $_GET['pais'] ?? null;
 
     if (!$pais) {
@@ -60,7 +80,6 @@ function editCategory() {
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
         $newPais = $_POST['pais'];
 
         updateCountry($pais, $newPais);
@@ -75,7 +94,6 @@ function editCategory() {
 }
 
 function deleteCategory() {
-
     $pais = $_GET['pais'] ?? null;
 
     if ($pais) {

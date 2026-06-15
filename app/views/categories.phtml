@@ -2,32 +2,129 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Categorías</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Equipos</title>
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
-<div class="container">
+<?php
+$escudos = [
+    '2 de Mayo' => '2mayo.png',
+    'Alianza Lima' => 'alianza lima.png',
+    'Always Ready' => 'always ready.png',
+    'Argentinos Juniors' => 'argentinos juniors.png',
+    'Bahia' => 'bahia.png',
+    'Barcelona SC' => 'barcelona.png',
+    'Boca Jrs.' => 'bocajrs.png',
+    'Bolivar' => 'bolivar.png',
+    'Botafogo' => 'botafogo.png',
+    'Carabobo' => 'carabobo.png',
+    'Cerro Porteno' => 'cerro porteno.png',
+    'Club Guaraní' => 'guarani.png',
+    'Coquimbo' => 'coquimbo.png',
+    'Corinthians' => 'corinthians.689ec041.png',
+    'Cruzeiro' => 'cruzeiro.png',
+    'Cusco FC' => 'cusco fc.png',
+    'Deportivo Tachira' => 'tachaira.png',
+    'Estudiantes' => 'estudiantes de lp.png',
+    'Flamengo' => 'flamengo.png',
+    'Fluminense' => 'Fluminense_FC_escudo.png',
+    'Huachipato' => 'huachipato.png',
+    'IDV' => 'independiente del valle.png',
+    'Independiente Medellín' => 'independiente medellin.png',
+    'Ind. Rivadavia' => 'independiente rivadavia.png',
+    'Junior' => 'junior.png',
+    'Juventud' => 'juventud.png',
+    'Lanus' => 'lanus.png',
+    'La Guaira' => 'la guaira logo.png',
+    'Libertad' => 'libertad.png',
+    'Liverpool' => 'liverpool.png',
+    'LDU' => 'LDU.png',
+    'Mirassol' => 'mirassol.png',
+    'Nacional' => 'nacional.png',
+    'Nacional Potosi' => 'nacional potosi.png',
+    "O'Higgins" => 'ohiggins.png',
+    'Palmeiras' => 'palmeiras.png',
+    'Peñarol' => 'penarol.png',
+    'Platense' => 'platense.png',
+    'Rosario Central' => 'rosario central.png',
+    'Santa Fe' => 'santa fe.png',
+    'Sporting Cristal' => 'sporting cristal.png',
+    'The Strongest' => 'the strongest.png',
+    'Tolima' => 'tolima.png',
+    'U. Católica' => 'uni catolica.png',
+    'UCV FC' => 'UCV fc.png',
+    'Universitario' => 'universitario.png',
+];
 
-    <div class="header">
-        <h1 class="logo">PuntoCopa</h1>
-        <h2 class="subtitulo">Categorías</h2>
-    </div>
+$banderas = [
+    'Argentina' => '🇦🇷',
+    'Brasil' => '🇧🇷',
+    'Brazil' => '🇧🇷',
+    'Uruguay' => '🇺🇾',
+    'Paraguay' => '🇵🇾',
+    'Chile' => '🇨🇱',
+    'Bolivia' => '🇧🇴',
+    'Peru' => '🇵🇪',
+    'Ecuador' => '🇪🇨',
+    'Colombia' => '🇨🇴',
+    'Venezuela' => '🇻🇪',
+];
 
-    <div class="nav">
+function inicialesEquipo($nombre) {
+    $palabras = explode(' ', trim($nombre));
+    $iniciales = '';
+
+    foreach ($palabras as $palabra) {
+        if ($palabra !== '') {
+            $iniciales .= strtoupper(substr($palabra, 0, 1));
+        }
+    }
+
+    return substr($iniciales, 0, 3);
+}
+?>
+
+<div class="equipos-box">
+
+    <h1 class="titulo-equipos">EQUIPOS</h1>
+    <h2 class="subtitulo-equipos">Pulsar en el equipo para ver su info detallada</h2>
+
+    <div class="nav equipos-nav">
         <a href="index.php?action=home">Inicio</a>
-        <a href="index.php?action=admin-categorias">Admin categorías</a>
+        <a href="index.php?action=agregar-equipo">Agregar equipo</a>
     </div>
 
-    <div class="cards">
-        <?php foreach ($categories as $category): ?>
-            <div class="card">
-                <span class="equipo"><?= htmlspecialchars($category->pais) ?></span>
+    <div class="equipos-grid">
+        <?php foreach ($teams as $team): ?>
+            <?php
+                $nombre = $team->nombre;
+                $pais = $team->pais;
+                $escudo = $escudos[$nombre] ?? null;
+                $bandera = $banderas[$pais] ?? '🏳️';
+            ?>
 
-                <a href="index.php?action=categoria&pais=<?= urlencode($category->pais) ?>">
-                    Ver equipos
-                </a>
-            </div>
+<a class="equipo-item" href="router.php?resource=equipos/<?= htmlspecialchars($team->id_equipo) ?>">
+    <div class="imagenes-equipo">
+        <span class="bandera-equipo"><?= $bandera ?></span>
+
+        <?php if ($escudo): ?>
+            <img 
+                class="escudo-equipo" 
+                src="<?= htmlspecialchars($escudo) ?>" 
+                alt="<?= htmlspecialchars($nombre) ?>"
+            >
+        <?php else: ?>
+            <span class="escudo-fallback"><?= htmlspecialchars(inicialesEquipo($nombre)) ?></span>
+        <?php endif; ?>
+
+        <?php if ($team->copas_libertadores > 0): ?>
+            <span class="copas-equipo">🏆 <?= htmlspecialchars($team->copas_libertadores) ?></span>
+        <?php endif; ?>
+    </div>
+
+    <p><?= htmlspecialchars($nombre) ?></p>
+</a>
         <?php endforeach; ?>
     </div>
 
