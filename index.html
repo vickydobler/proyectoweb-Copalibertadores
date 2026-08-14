@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="es">
+  <?php
+/*
+    Esta vista es la página principal de PuntoCopa.
+
+    Acá armé toda la parte visual del sitio mostrando la información de la
+    Copa Libertadores. Incluí el fixture de los partidos, las tablas de
+    posiciones de cada grupo, los últimos campeones y la tabla de goleadores.
+
+    También agregué un menú para poder navegar por las distintas secciones
+    del proyecto. En esta vista no hago consultas a la base de datos, sino
+    que solamente organizo y muestro la información para que el usuario la
+    pueda ver de una forma clara y parecida a Promiedos.
+*/
+?>
+<head>
+  <meta charset="UTF-8">
+  <title>PuntoCopa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+ <!-- HEADER -->
+  <div class="header">
+    <h1 class="logo">
+      PuntoCopa
+    </h1>
+    <h2 class="subtitulo">Conmebol Copa Libertadores</h2>
+  </div>
+  
+  <!-- NAV -->
+  <div class="nav">
+  <a href="index.php?action=home">Fixture y tablas</a>
+  <a href="index.php?action=categorias">Equipos</a>
+  <a href="index.php?action=admin-categorias">Admin categorías</a>
+</div>
+ <!-- CAMPEONES -->
+
+ <div class="campeones">
+
+  <h3>Últimos campeones</h3>
+
+  <div class="cards">
+
+    <div class="card">
+      <p class="anio">2023</p>
+      <img src="Fluminense_FC_escudo.png">
+      <span class="equipo">Fluminense</span>
+      <small class="copas">🏆 1 </small>
+    </div>
+
+    <div class="card">
+      <p class="anio">2024</p>
+      <img src="botafogo.png">
+      <span class="equipo">Botafogo</span>
+      <small class="copas">🏆 1 </small>
+    </div>
+
+    <div class="card">
+      <p class="anio">2025</p>
+      <img src="flamengo.png">
+      <span class="equipo">Flamengo</span>
+      <small class="copas">🏆 4 </small>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main">
+
+    <!-- IZQUIERDA: GRUPOS -->
+    <div class="grupos">
+      <div class="tabla-grupo">
+  <h2>FASE DE GRUPOS</h2>
+
+  <div class="grupo-card">
+    <h3>GRUPO A</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Equipos</th>
+          <th>PTS</th>
+          <th>J</th>
+          <th>Gol</th>
+          <th>+/-</th>
+          <th>G</th>
+          <th>E</th>
+          <th>P</th>
+          <th>Últimas</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="libertadores">
+          <td>1</td>
+          <td class="equipo-tabla">
+            <img src="flamengo.png">
+            Flamengo
+          </td>
+          <td><soft
+          >7</soft
+          ></td>
+          <td>3</td>
+          <td>7:2</td>
+          <td>5</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0</td>
+          <td><span class="e">E</span><span class="v">V</span><span class="v">V</span></td>
+        </tr>
+
+        <tr class="libertadores">
+          <td>2</td>
+          <td class="equipo-tabla">
+            <img src="estudiantes de lp.png">
+            Estudiantes
+          </td>
+          <td><soft
+          >5</soft
+          ></td>
+          <td>3</td>
+          <td>4:3</td>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+          <td>0</td>
+          <td><span class="e">E</span><span class="v">V</span><span class="e">E</span></td>
+        </tr>
+
+        <tr class="sudamericana">
+          <td>3</td>
+          <td class="equipo-tabla">
+            <img src="independiente medellin.png">
+            Independiente Medellín
+          </td>
+          <td><soft
+          >4</soft
+          ></td>
+          <td>3</td>
+          <td>3:5</td>
+          <td>-2</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><span class="v">V</span><span class="d">D</span><span class="e">E</span></td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td class="equipo-tabla">
+            <img src="cusco fc.png">
+            Cusco FC
+          </td>
+          <td><soft
+          >0</soft
+          ></td>
+          <td>3</td>
+          <td>1:5</td>
+          <td>-4</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td><span class="d">D</span><span class="d">D</span><span class="d">D</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="referencias">
+      <p><span class="circle azul"></span> Octavos de Final</p>
+      <p><span class="circle violeta"></span> CONMEBOL Copa Sudamericana</p>
+    </div>
+  </div>
+</div>
+        
+        <div class="grupo-card">
+  <h3>GRUPO B</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Equipos</th>
+        <th>PTS</th>
+        <th>J</th>
+        <th>Gol</th>
+        <th>+/-</th>
+        <th>G</th>
+        <th>E</th>
+        <th>P</th>
+        <th>Últimas</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="libertadores">
+        <td>1</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Escudo_del_Deportes_Tolima.svg">
+          Tolima
+        </td>
+        <td><soft
+        >4</soft
+        ></td>
+        <td>3</td>
+        <td>4:3</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td><span class="v">V</span><span class="d">D</span><span class="e">E</span></td>
+      </tr>
+
+      <tr class="libertadores">
+        <td>2</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Club_Nacional_de_Football%27s_logo.png">
+          Nacional
+        </td>
+        <td><soft
+        >4</soft
+        ></td>
+        <td>3</td>
+        <td>6:6</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td><span class="d">D</span><span class="v">V</span><span class="e">E</span></td>
+      </tr>
+
+      <tr class="sudamericana">
+        <td>3</td>
+        <td class="equipo-tabla">
+          <img src="universitario.png">
+          Universitario
+        </td>
+        <td><soft
+        >4</soft
+        ></td>
+        <td>3</td>
+        <td>4:4</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td><span class="v">V</span><span class="d">D</span><span class="e">E</span></td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/en/c/c0/Coquimbo_Unido.png">
+          Coquimbo
+        </td>
+        <td><soft
+        >4</soft
+        ></td>
+        <td>3</td>
+        <td>3:4</td>
+        <td>-1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td><span class="d">D</span><span class="v">V</span><span class="e">E</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="referencias">
+    <p><span class="circle azul"></span> Octavos de Final</p>
+    <p><span class="circle violeta"></span> CONMEBOL Copa Sudamericana</p>
+  </div>
+</div>
+        <div class="grupo-card">
+  <h3>GRUPO C</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Equipos</th>
+        <th>PTS</th>
+        <th>J</th>
+        <th>Gol</th>
+        <th>+/-</th>
+        <th>G</th>
+        <th>E</th>
+        <th>P</th>
+        <th>Últimas</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="libertadores">
+        <td>1</td>
+        <td class="equipo-tabla">
+          <img src="independiente rivadavia.png">
+          Ind. Rivadavia
+        </td>
+        <td><soft
+        >9</soft
+        ></td>
+        <td>3</td>
+        <td>7:2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+        <td><span class="v">V</span><span class="v">V</span><span class="v">V</span></td>
+      </tr>
+
+      <tr class="libertadores">
+        <td>2</td>
+        <td class="equipo-tabla">
+          <img src="bolivar.png">
+          Bolívar
+        </td>
+        <td><soft
+        >4</soft
+        ></td>
+        <td>3</td>
+        <td>3:2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td><span class="v">V</span><span class="e">E</span><span class="d">D</span></td>
+      </tr>
+
+      <tr class="sudamericana">
+        <td>3</td>
+        <td class="equipo-tabla">
+          <img src="la guaira logo.png">
+          La Guaira
+        </td>
+        <td><soft
+        >2</soft
+        ></td>
+        <td>3</td>
+        <td>2:5</td>
+        <td>-3</td>
+        <td>0</td>
+        <td>2</td>
+        <td>1</td>
+        <td><span class="d">D</span><span class="e">E</span><span class="e">E</span></td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td class="equipo-tabla">
+          <img src="Fluminense_FC_escudo.png">
+          Fluminense
+        </td>
+        <td><soft
+        >1</soft
+        ></td>
+        <td>3</td>
+        <td>1:4</td>
+        <td>-3</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td><span class="d">D</span><span class="d">D</span><span class="e">E</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="referencias">
+    <p><span class="circle azul"></span> Octavos de Final</p>
+    <p><span class="circle violeta"></span> CONMEBOL Copa Sudamericana</p>
+  </div>
+</div>
+        <!-- GRUPO D -->
+<div class="grupo-card">
+  <h3>GRUPO D</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Equipos</th>
+        <th>PTS</th>
+        <th>J</th>
+        <th>Gol</th>
+        <th>+/-</th>
+        <th>G</th>
+        <th>E</th>
+        <th>P</th>
+        <th>Últimas</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="libertadores">
+        <td>1</td>
+        <td class="equipo-tabla">
+          <img src="uni catolica.png">
+          U. Católica
+        </td>
+        <td><soft
+        >6</soft
+        ></td>
+        <td>3</td>
+        <td>5:4</td>
+        <td>1</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td><span class="v">V</span><span class="v">V</span><span class="d">D</span></td>
+      </tr>
+
+      <tr class="libertadores">
+        <td>2</td>
+        <td class="equipo-tabla">
+          <img src="bocajrs.png">
+          Boca Jrs.
+        </td>
+        <td><soft
+        >6</soft
+        ></td>
+        <td>4</td>
+        <td>5:3</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>2</td>
+        <td><span class="d">D</span><span class="d">D</span><span class="v">V</span><span class="v">V</span></td>
+      </tr>
+
+      <tr class="sudamericana">
+        <td>3</td>
+        <td class="equipo-tabla">
+          <img src="cruzeiro.png">
+          Cruzeiro
+        </td>
+        <td><soft
+        >6</soft
+        ></td>
+        <td>3</td>
+        <td>3:2</td>
+        <td>1</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td><span class="v">V</span><span class="d">D</span><span class="v">V</span></td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td class="equipo-tabla">
+          <img src="barcelona.png">
+          Barcelona SC
+        </td>
+        <td><soft
+        >3</soft
+        ></td>
+        <td>4</td>
+        <td>2:6</td>
+        <td>-4</td>
+        <td>1</td>
+        <td>0</td>
+        <td>3</td>
+        <td><span class="v">V</span><span class="d">D</span><span class="d">D</span><span class="d">D</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="referencias">
+    <p><span class="circle azul"></span> Octavos de Final</p>
+    <p><span class="circle violeta"></span> CONMEBOL Copa Sudamericana</p>
+  </div>
+</div>
+
+<!-- GRUPO E -->
+<div class="grupo-card">
+  <h3>GRUPO E</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Equipos</th>
+        <th>PTS</th>
+        <th>J</th>
+        <th>Gol</th>
+        <th>+/-</th>
+        <th>G</th>
+        <th>E</th>
+        <th>P</th>
+        <th>Últimas</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="libertadores">
+        <td>1</td>
+        <td class="equipo-tabla">
+          <img src="corinthians.689ec041.png">
+          Corinthians
+        </td>
+        <td><soft
+        >9</soft
+        ></td>
+        <td>3</td>
+        <td>6:0</td>
+        <td>6</td>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+        <td><span class="v">V</span><span class="v">V</span><span class="v">V</span></td>
+      </tr>
+
+      <tr class="libertadores">
+        <td>2</td>
+        <td class="equipo-tabla">
+          <img src="platense.png">
+          Platense
+        </td>
+        <td><soft
+        >6</soft
+        ></td>
+        <td>3</td>
+        <td>4:4</td>
+        <td>0</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td><span class="v">V</span><span class="v">V</span><span class="d">D</span></td>
+      </tr>
+
+      <tr class="sudamericana">
+        <td>3</td>
+        <td class="equipo-tabla">
+          <img src="santa fe.png">
+          Santa Fe
+        </td>
+        <td><soft
+        >1</soft
+        ></td>
+        <td>3</td>
+        <td>2:5</td>
+        <td>-3</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td><span class="d">D</span><span class="d">D</span><span class="e">E</span></td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td class="equipo-tabla">
+          <img src="penarol.png">
+          Peñarol
+        </td>
+        <td><soft
+        >1</soft
+        ></td>
+        <td>3</td>
+        <td>2:5</td>
+        <td>-3</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td><span class="d">D</span><span class="d">D</span><span class="e">E</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="referencias">
+    <p><span class="circle azul"></span> Octavos de Final</p>
+    <p><span class="circle violeta"></span> CONMEBOL Copa Sudamericana</p>
+  </div>
+</div><!-- GRUPO F -->
+<div class="grupo-card">
+  <h3>GRUPO F</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Equipos</th>
+        <th>PTS</th>
+        <th>J</th>
+        <th>Gol</th>
+        <th>+/-</th>
+        <th>G</th>
+        <th>E</th>
+        <th>P</th>
+        <th>Últimas</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="libertadores">
+        <td>1</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg">
+          Palmeiras
+        </td>
+        <td><soft
+        >8</soft
+        ></td>
+        <td>4</td>
+        <td>6:3</td>
+        <td>3</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>
+          <span class="v">V</span>
+          <span class="e">E</span>
+          <span class="v">V</span>
+          <span class="e">E</span>
+        </td>
+      </tr>
+
+      <tr class="libertadores">
+        <td>2</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Escudo_del_Club_Sporting_Cristal.svg/1280px-Escudo_del_Club_Sporting_Cristal.svg.png">
+          Sporting Cristal
+        </td>
+        <td><soft
+        >6</soft
+        ></td>
+        <td>4</td>
+        <td>4:4</td>
+        <td>0</td>
+        <td>2</td>
+        <td>0</td>
+        <td>2</td>
+        <td>
+          <span class="d">D</span>
+          <span class="v">V</span>
+          <span class="d">D</span>
+          <span class="v">V</span>
+        </td>
+      </tr>
+
+      <tr class="sudamericana">
+        <td>3</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Escudo_Club_Cerro_Porte%C3%B1o_2023-Actual.svg">
+          Cerro Porteño
+        </td>
+        <td><soft
+        >4</soft
+        ></td>
+        <td>3</td>
+        <td>2:2</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>
+          <span class="e">E</span>
+          <span class="v">V</span>
+          <span class="d">D</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Escudo_de_Atl%C3%A9tico_Junior.svg/1920px-Escudo_de_Atl%C3%A9tico_Junior.svg.png">
+          Junior
+        </td>
+        <td><soft
+        >1</soft
+        ></td>
+        <td>3</td>
+        <td>1:4</td>
+        <td>-3</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>
+          <span class="d">D</span>
+          <span class="d">D</span>
+          <span class="e">E</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="referencias">
+    <p><span class="circle azul"></span> Octavos de Final</p>
+    <p><span class="circle violeta"></span> CONMEBOL Copa Sudamericana</p>
+  </div>
+</div>
+
+<!-- GRUPO G -->
+<div class="grupo-card">
+  <h3>GRUPO G</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Equipos</th>
+        <th>PTS</th>
+        <th>J</th>
+        <th>Gol</th>
+        <th>+/-</th>
+        <th>G</th>
+        <th>E</th>
+        <th>P</th>
+        <th>Últimas</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="libertadores">
+        <td>1</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/LOGO_5TA._ESTRELLA.png">
+          LDU
+        </td>
+        <td><soft
+        >6</soft
+        ></td>
+        <td>3</td>
+        <td>3:1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td>
+          <span class="d">D</span>
+          <span class="v">V</span>
+          <span class="v">V</span>
+        </td>
+      </tr>
+
+      <tr class="libertadores">
+        <td>2</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Escudo_de_Lan%C3%BAs_2025.png">
+          Lanús
+        </td>
+        <td><soft
+        >6</soft
+        ></td>
+        <td>4</td>
+        <td>2:5</td>
+        <td>-3</td>
+        <td>2</td>
+        <td>0</td>
+        <td>2</td>
+        <td>
+          <span class="d">D</span>
+          <span class="v">V</span>
+          <span class="v">V</span>
+          <span class="d">D</span>
+        </td>
+      </tr>
+
+      <tr class="sudamericana">
+        <td>3</td>
+        <td class="equipo-tabla">
+          <img src="mirassol.png">
+          Mirassol
+        </td>
+        <td><soft
+        >6</soft
+        ></td>
+        <td>3</td>
+        <td>3:2</td>
+        <td>1</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td>
+          <span class="v">V</span>
+          <span class="d">D</span>
+          <span class="v">V</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td class="equipo-tabla">
+          <img src="always ready.png">
+          Always Ready
+        </td>
+        <td><soft
+        >3</soft
+        ></td>
+        <td>4</td>
+        <td>4:4</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>3</td>
+        <td>
+          <span class="v">V</span>
+          <span class="d">D</span>
+          <span class="d">D</span>
+          <span class="d">D</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="referencias">
+    <p><span class="circle azul"></span> Octavos de Final</p>
+    <p><span class="circle violeta"></span> CONMEBOL Copa Sudamericana</p>
+  </div>
+</div>
+
+<!-- GRUPO H -->
+<div class="grupo-card">
+  <h3>GRUPO H</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Equipos</th>
+        <th>PTS</th>
+        <th>J</th>
+        <th>Gol</th>
+        <th>+/-</th>
+        <th>G</th>
+        <th>E</th>
+        <th>P</th>
+        <th>Últimas</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="libertadores">
+        <td>1</td>
+        <td class="equipo-tabla">
+          <img src="rosario central.png">
+          Central
+        </td>
+        <td><soft
+        >10</soft
+        ></td>
+        <td>4</td>
+        <td>5:0</td>
+        <td>5</td>
+        <td>3</td>
+        <td>1</td>
+        <td>0</td>
+        <td>
+          <span class="v">V</span>
+          <span class="v">V</span>
+          <span class="v">V</span>
+          <span class="e">E</span>
+        </td>
+      </tr>
+
+      <tr class="libertadores">
+        <td>2</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Escudoindependientedelvalle2023.png">
+          IDV
+        </td>
+        <td><soft
+        >7</soft
+        ></td>
+        <td>4</td>
+        <td>6:5</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>
+          <span class="d">D</span>
+          <span class="v">V</span>
+          <span class="v">V</span>
+          <span class="e">E</span>
+        </td>
+      </tr>
+
+      <tr class="sudamericana">
+        <td>3</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/en/f/f7/Universidad_Central_FC.png">
+          UCV FC
+        </td>
+        <td><soft
+        >6</soft
+        ></td>
+        <td>4</td>
+        <td>6:7</td>
+        <td>-1</td>
+        <td>2</td>
+        <td>0</td>
+        <td>2</td>
+        <td>
+          <span class="v">V</span>
+          <span class="d">D</span>
+          <span class="d">D</span>
+          <span class="v">V</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td class="equipo-tabla">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Club_Libertad.png">
+          Libertad
+        </td>
+        <td><soft
+        >0</soft
+        ></td>
+        <td>4</td>
+        <td>3:8</td>
+        <td>-5</td>
+        <td>0</td>
+        <td>0</td>
+        <td>4</td>
+        <td>
+          <span class="d">D</span>
+          <span class="d">D</span>
+          <span class="d">D</span>
+          <span class="d">D</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="referencias">
+    <p><span class="circle azul"></span> Octavos de Final</p>
+    <p><span class="circle violeta"></span> CONMEBOL Copa Sudamericana</p>
+  </div>
+</div>
+      </ul>
+    </div>
+
+
+<div class="fixture">
+
+  <div class="fixture-header">
+    <span class="arrow">&#10094;</span>
+    <div>
+      <h3>TEMPORADA</h3>
+      <p>FECHA 3 ▼</p>
+    </div>
+    <span class="arrow">&#10095;</span>
+  </div>
+
+  <div class="fecha">Mar 28/04</div>
+
+  <!-- 1 -->
+  <div class="partido">
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Escudo_de_Lan%C3%BAs_2025.png">
+      <span>Lanús</span>
+      <small>ARG</small>
+    </div>
+    <div class="resultado">1 - 0</div>
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/LOGO_5TA._ESTRELLA.png">
+      <span>LDU</span>
+      <small>ECU</small>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="partido">
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Club_Libertad.png">
+      <span>Libertad</span>
+      <small>PAR</small>
+    </div>
+    <div class="resultado">2 - 3</div>
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Escudoindependientedelvalle2023.png">
+      <span>IDV</span>
+      <small>ECU</small>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="partido">
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/en/f/f7/Universidad_Central_FC.png">
+      <span>UCV FC</span>
+      <small>VEN</small>
+    </div>
+    <div class="resultado">0 - 3</div>
+    <div class="team">
+      <img src="rosario central.png">
+      <span>Central</span>
+      <small>ARG</small>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="partido">
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Cruzeiro_Esporte_Clube_%28logo%29.svg/1280px-Cruzeiro_Esporte_Clube_%28logo%29.svg.png">
+      <span>Cruzeiro</span>
+      <small>BRA</small>
+    </div>
+    <div class="resultado">1 - 0</div>
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Escudo_del_Club_Atl%C3%A9tico_Boca_Juniors.svg/1280px-Escudo_del_Club_Atl%C3%A9tico_Boca_Juniors.svg.png">
+      <span>Boca</span>
+      <small>ARG</small>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="partido">
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Escudo_del_Deportes_Tolima.svg">
+      <span>Tolima</span>
+      <small>COL</small>
+    </div>
+    <div class="resultado">1 - 1</div>
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/en/c/c0/Coquimbo_Unido.png">
+      <span>Coquimbo</span>
+      <small>CHI</small>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="partido">
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Escudo_del_Club_Sporting_Cristal.svg/1280px-Escudo_del_Club_Sporting_Cristal.svg.png">
+      <span>Sporting Cristal</span>
+      <small>PER</small>
+    </div>
+    <div class="resultado">0 - 2</div>
+    <div class="team">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Escudo_de_Atl%C3%A9tico_Junior.svg/1920px-Escudo_de_Atl%C3%A9tico_Junior.svg.png">
+      <span>Junior</span>
+      <small>COL</small>
+    </div>
+  </div>
+
+<div class="fecha">Mié 29/04</div>
+
+<!-- 1 -->
+<div class="partido">
+  <div class="team">
+    <img src="platense.png">
+    <span>Platense</span>
+    <small>ARG</small>
+  </div>
+  <div class="resultado">2 - 1</div>
+  <div class="team">
+    <img src="santa fe.png">
+    <span>Santa Fe</span>
+    <small>COL</small>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="partido">
+  <div class="team">
+    <img src="mirassol.png">
+    <span>Mirassol</span>
+    <small>BRA</small>
+  </div>
+  <div class="resultado">2 - 0</div>
+  <div class="team">
+    <img src="always ready.png">
+    <span>Always Ready</span>
+    <small>BOL</small>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="partido">
+  <div class="team">
+    <img src="barcelona.png">
+    <span>Barcelona SC</span>
+    <small>ECU</small>
+  </div>
+  <div class="resultado">1 - 2</div>
+  <div class="team">
+    <img src="uni catolica.png">
+    <span>U. Católica</span>
+    <small>CHI</small>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="partido">
+  <div class="team">
+    <img src="estudiantes de lp.png">
+    <span>Estudiantes</span>
+    <small>ARG</small>
+  </div>
+  <div class="resultado">1 - 1</div>
+  <div class="team">
+    <img src="flamengo.png">
+    <span>Flamengo</span>
+    <small>BRA</small>
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="partido">
+  <div class="team">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Escudo_Club_Cerro_Porte%C3%B1o_2023-Actual.svg">
+    <span>Cerro Porteño</span>
+    <small>PAR</small>
+  </div>
+  <div class="resultado">1 - 1</div>
+  <div class="team">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg">
+    <span>Palmeiras</span>
+    <small>BRA</small>
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="partido">
+  <div class="team">
+    <img src="universitario.png">
+    <span>Universitario</span>
+    <small>PER</small>
+  </div>
+  <div class="resultado">4 - 2</div>
+  <div class="team">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Club_Nacional_de_Football%27s_logo.png">
+    <span>Nacional</span>
+    <small>URU</small>
+  </div>
+</div>
+<div class="fecha">Jue 30/04</div>
+
+<!-- 1 -->
+<div class="partido">
+  <div class="team">
+    <img src="bolivar.png">
+    <span>Bolívar</span>
+    <small>BOL</small>
+  </div>
+  <div class="resultado">2 - 0</div>
+  <div class="team">
+    <img src="Fluminense_FC_escudo.png">
+    <span>Fluminense</span>
+    <small>BRA</small>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="partido">
+  <div class="team">
+    <img src="independiente rivadavia.png">
+    <span>Ind. Rivadavia</span>
+    <small>ARG</small>
+  </div>
+  <div class="resultado">4 - 1</div>
+  <div class="team">
+    <img src="la guaira logo.png">
+    <span>La Guaira</span>
+    <small>VEN</small>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="partido">
+  <div class="team">
+    <img src="corinthians.689ec041.png">
+    <span>Corinthians</span>
+    <small>BRA</small>
+  </div>
+  <div class="resultado">2 - 0</div>
+  <div class="team">
+    <img src="penarol.png">
+    <span>Peñarol</span>
+    <small>URU</small>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="partido">
+  <div class="team">
+    <img src="independiente medellin.png">
+    <span>Ind. Medellín</span>
+    <small>COL</small>
+  </div>
+  <div class="resultado">1 - 0</div>
+  <div class="team">
+    <img src="cusco fc.png">
+    <span>Cusco FC</span>
+    <small>PER</small>
+  </div>
+</div>
+
+<div class="goleadores">
+  <h3>Maximos Goleadores</h3>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="independiente rivadavia.png">
+      <soft
+      >Álex Arce</soft
+      >
+    </div>
+    <span>8</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="independiente del valle.png">
+      <soft>Carlos Gonzalez</soft>
+    </div>
+    <span>6</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="flamengo.png">
+      <soft
+      >Bruno Henrique</soft
+      >
+    </div>
+    <span>4</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="independiente medellin.png">
+      <soft
+      >Francisco Fydriszewski</soft
+      >
+    </div>
+    <span>4</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="libertad.png">
+      <soft
+      >Lorenzo Melgarejo</soft
+      >
+    </div>
+    <span>4</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="cruzeiro.png">
+      <soft
+      >Matheus Pereira</soft
+      >
+    </div>
+    <span>4</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="uni catolica.png">
+      <soft
+      >Fernando Zampedri</soft
+      >
+    </div>
+    <span>3</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="corinthians.689ec041.png">
+      <soft
+      >Gustavo Henrique</soft
+      >
+    </div>
+    <span>3</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="palmeiras.png">
+      <soft
+      >Jhon Arias</soft
+      >
+    </div>
+    <span>3</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="UCV fc.png">
+      <soft
+      >Juan Cuesta</soft
+      >
+    </div>
+    <span>3</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="junior.png">
+      <soft
+      >Luis Muriel</soft
+      >
+    </div>
+    <span>3</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="cerro porteno.png">
+      <soft
+      >Pablo Vegetti</soft
+      >
+    </div>
+    <span>3</span>
+  </div>
+
+  <div class="goleador">
+    <div class="goleador-info">
+      <img src="estudiantes de lp.png">
+      <soft
+      >Tiago Palacios</soft
+      >
+    </div>
+    <span>3</span>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
